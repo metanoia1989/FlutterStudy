@@ -30,7 +30,7 @@ class CounterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(`Count: $count`);
+    return Text('Count: $count');
   }
 }
 
