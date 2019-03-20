@@ -18,14 +18,14 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text('ClipPath 1 路径裁剪示例'),
+        title: new Text('ClipRect 矩形裁剪示例'),
       ),
       body: new Center(
-        child: new ClipPath(
-          clipper: new TriangleCliper(), // 自定义clipper
+        child: new ClipRect(
+          clipper: new RectClipper(), // 自定义clipper
           child: new SizedBox(
-            width: 100.0,
-            height: 100.0,
+            width: 300.0,
+            height: 300.0,
             child: new Image.asset(
               'assets/images/align_09.jpg',
               fit: BoxFit.fill,
@@ -36,24 +36,19 @@ class FirstPage extends StatelessWidget {
     );
   }
 }
-  
+
 
 // 自定义 clipper 类型为 Rect
-class TriangleCliper extends CustomClipper<Path>{
+class RectClipper extends CustomClipper<Rect>{
   // 重写获取剪取范围
   @override
-  Path getClip(Size size) {
-    Path path = new Path();
-    path.moveTo(50.0, 50.0); // 起始点
-    path.lineTo(50.0, 50.0); // 终止点
-    path.lineTo(100.0, 100.0); // 起始点 （50， 10） 终止点
-    path.close(); 
-    return path;
+  Rect getClip(Size size) {
+    return new Rect.fromLTRB(100.0, 100.0, size.width - 100.0, size.height - 100.0);
   }
 
   // 重写是否重新裁剪
   @override
-  bool shouldReclip(TriangleCliper oldClipper) { 
+  bool shouldReclip(CustomClipper<Rect> oldClipper) { 
     return true;
   }
 }
