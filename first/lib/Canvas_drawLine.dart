@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
+import 'dart:math';
 
 void main() => runApp(App());
 
@@ -19,7 +19,7 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text('CustomPaint绘制路径示例'),
+        title: new Text('CustomPaint绘制直线示例'),
       ),
       body: new Center(
         child: SizedBox(
@@ -29,13 +29,13 @@ class FirstPage extends StatelessWidget {
             painter: LinePainter(),
             child: Center(
               child: Text(
-                '绘路径示例',
+                '绘制直线',
                 style: const TextStyle(
                   fontSize: 38.0,
                   fontWeight: FontWeight.w600,
                   color: Colors.black,
                 ),
-              ),
+              ) ,
             ),
           ),
         ),
@@ -44,27 +44,22 @@ class FirstPage extends StatelessWidget {
   }
 }
   
+
 // 继承自 CustomPainter 并且实现 CustomPainter 里面的 paint 和 shouldRepaint 方法
 class LinePainter extends CustomPainter {
   // 定义画笔
   Paint _paint = new Paint()
-    ..color = Colors.grey
-    ..strokeCap =StrokeCap.round
+    ..color = Colors.green
+    ..strokeCap = StrokeCap.square
     ..isAntiAlias = true
-    ..strokeWidth = 2.0
-    ..style = PaintingStyle.stroke; 
-    // 画笔样式有填充 PaintingStyle.fill 及没有填充 PaintinngStyle.stroke 两种
+    ..strokeWidth = 3.0
+    ..style =PaintingStyle.stroke;
 
   // 重写绘制内容方法
   @override
   void paint(Canvas canvas, Size size) {
-    // 新建一个 path 移动到一个位置，然后画各种线
-    Path path = new Path() ..moveTo(100.0, 100.0);
-    path.lineTo(200.0, 300.0);
-    path.lineTo(100.0, 200.0);
-    path.lineTo(150.0, 250.0);
-    path.lineTo(150.0, 500.0);
-    canvas.drawPath(path, _paint);
+    // 绘制直线
+    canvas.drawLine(Offset(20.0, 10.0), Offset(300.0, 20.0), _paint);
   }
 
   // 重写是否需要重绘的

@@ -19,7 +19,7 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text('CustomPaint绘制路径示例'),
+        title: new Text('CustomPaint绘制多个点示例'),
       ),
       body: new Center(
         child: SizedBox(
@@ -29,7 +29,7 @@ class FirstPage extends StatelessWidget {
             painter: LinePainter(),
             child: Center(
               child: Text(
-                '绘路径示例',
+                '绘多个点示例',
                 style: const TextStyle(
                   fontSize: 38.0,
                   fontWeight: FontWeight.w600,
@@ -52,19 +52,22 @@ class LinePainter extends CustomPainter {
     ..strokeCap =StrokeCap.round
     ..isAntiAlias = true
     ..strokeWidth = 2.0
-    ..style = PaintingStyle.stroke; 
+    ..style = PaintingStyle.fill ; 
     // 画笔样式有填充 PaintingStyle.fill 及没有填充 PaintinngStyle.stroke 两种
 
   // 重写绘制内容方法
   @override
   void paint(Canvas canvas, Size size) {
-    // 新建一个 path 移动到一个位置，然后画各种线
-    Path path = new Path() ..moveTo(100.0, 100.0);
-    path.lineTo(200.0, 300.0);
-    path.lineTo(100.0, 200.0);
-    path.lineTo(150.0, 250.0);
-    path.lineTo(150.0, 500.0);
-    canvas.drawPath(path, _paint);
+    const PI = 3.1415926;
+    // 定义矩形
+    Rect rect1 = Rect.fromCircle(center: Offset(100.0, 0.0), radius: 100.0);
+    // 画 1/2PI弧度的圆弧
+    canvas.drawArc(rect1, 0.0, PI / 2, true, _paint);
+
+    // 画 PI 弧度的圆弧
+    Rect rect2 = Rect.fromCircle(center: Offset(200.0, 150.0), radius: 100.0);
+    canvas.drawArc(rect2, 0.0, PI, true, _paint);
+
   }
 
   // 重写是否需要重绘的
