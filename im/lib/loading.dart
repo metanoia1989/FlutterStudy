@@ -4,9 +4,7 @@ import 'dart:async';
 // 加载页面
 class LoadingPage extends StatefulWidget {
   @override
-  _LoadingState createState() {
-    new _LoadingState();
-  }
+  _LoadingState createState() => new _LoadingState(); 
 }
 
 class _LoadingState extends State<LoadingPage> {

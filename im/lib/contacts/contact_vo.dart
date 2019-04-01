@@ -93,23 +93,6 @@ List<ContactVO> contactData = [
   new ContactVO(seationKey: 'L', name: '联通', avatarUrl: ''),
   new ContactVO(
       seationKey: 'L',
-      name: '留学生',
-      avatarUrl: 'http://www.qqzhi.com/uploadpic/2014-09-25/120539135.jpg'),
-  new ContactVO(
-      seationKey: 'L',
-      name: '李先森',
-      avatarUrl: 'http://www.qqzhi.com/uploadpic/2015-01-16/110701410.jpg'),
-  new ContactVO(
-      seationKey: 'L',
-      name: '罗森',
-      avatarUrl: 'http://www.qqzhi.com/uploadpic/2014-10-14/001343706.jpg'),
-  new ContactVO(
-      seationKey: 'L',
-      name: '老司机',
-      avatarUrl:
-      'http://img.bitscn.com/upimg/allimg/c160107/1452134O464060-32cR.jpg'),
-  new ContactVO(
-      seationKey: 'L',
       name: '辣眼睛',
       avatarUrl:
       ''),

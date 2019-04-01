@@ -23,7 +23,7 @@ class ContactItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         // 每条列表项底部添加一个边框
-        border: Border(bottom: BorderSide(width: 0.5, color: Color(0xffd9d9d9))),
+        border: Border(bottom: BorderSide(width: 0.5, color: Color(0xfff5f5f5))),
       ),
       height: 52.0,
       child: FlatButton(

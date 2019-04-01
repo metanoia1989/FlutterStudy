@@ -15,6 +15,7 @@ class ContactState extends State<Contacts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff5f5f5),
       body: ContactSiderList(
         // 好友列表数据
         items: contactData,
@@ -39,7 +40,7 @@ class ContactState extends State<Contacts> {
           return Container(
             height: 32.0,
             padding: const EdgeInsets.only(left: 14.0),
-            color: Colors.grey[300],
+            color: Colors.grey[100],
             alignment: Alignment.centerLeft,
             // 显示字母
             child: Text(

@@ -84,7 +84,7 @@ class AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("即时通讯讯"),
+        title: Text("即时通讯"),
         actions: <Widget>[
           GestureDetector(
             onTap: () {

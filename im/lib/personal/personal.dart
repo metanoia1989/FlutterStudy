@@ -7,6 +7,7 @@ class Personal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff5f5f5),
       // 列表
       body: ListView(
         children: <Widget>[
