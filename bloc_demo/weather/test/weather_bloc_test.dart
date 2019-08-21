@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter_test/flutter_test.dart' as prefix0;
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:weather/repositories/weather_repository.dart';
