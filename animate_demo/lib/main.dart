@@ -7,6 +7,8 @@ import 'animate_page_4.dart';
 import 'animate_page_5.dart';
 import 'animate_page_6.dart';
 import 'animate_page_7.dart';
+import 'animate_page_8.dart';
+import 'animate_page_9.dart';
 
 void main() => runApp(MyApp());
 
@@ -112,6 +114,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (BuildContext context) {
                     return AnimatePage7();
+                  }
+                ));
+              },
+            ),
+            FlatButton(
+              child: Text('动画页面8 动画过度组件'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return AnimatePage8();
+                  }
+                ));
+              },
+            ),
+            FlatButton(
+              child: Text('动画页面9 动画过渡组件集合'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return AnimatePage9();
                   }
                 ));
               },
